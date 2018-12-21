@@ -1,0 +1,31 @@
+mpif90 -c -I/global/apps/PETSc/3.4.4/include/finclude  -fPIC -O3 -IPO   -I/global/apps/petsc/3.4.4/include -I/global/apps/petsc/3.4.4/include -I/global/apps/openmpi/1.6.2/intel/13.0.0/include    -o main.o main.F
+mpif90 -I/global/apps/PETSc/3.4.4/include/finclude  main.o -o test -Wl,-rpath,/global/apps/petsc/3.4.4/lib -L/global/apps/petsc/3.4.4/lib  -lpetsc -Wl,-rpath,/global/apps/petsc/3.4.4/lib -lHYPRE -Wl,-rpath,/global/apps/openmpi/1.6.2/intel/13.0.0/lib -L/global/apps/openmpi/1.6.2/intel/13.0.0/lib -Wl,-rpath,/global/apps/intel/2013.1/mkl/lib/intel64 -L/global/apps/intel/2013.1/mkl/lib/intel64 -Wl,-rpath,/global/apps/intel/2013.1/tbb/lib/intel64 -L/global/apps/intel/2013.1/tbb/lib/intel64 -Wl,-rpath,/global/apps/intel/2013.1/ipp/lib/intel64 -L/global/apps/intel/2013.1/ipp/lib/intel64 -Wl,-rpath,/global/apps/intel/2013.1/composerxe/lib/intel64 -L/global/apps/intel/2013.1/composerxe/lib/intel64 -Wl,-rpath,/global/hds/home/install/intel/2013.1/composer_xe_2013.1.117/compiler/lib/intel64 -L/global/hds/home/install/intel/2013.1/composer_xe_2013.1.117/compiler/lib/intel64 -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -llapack -lblas -lX11 -lpthread -lmpi_f90 -lmpi_f77 -lm -lm -lifport -lifcore -lm -lm -lm -ldl -lmpi -lrt -lnsl -lutil -limf -lsvml -lirng -lipgo -ldecimal -lcilkrts -lstdc++ -lgcc_s -lirc -lpthread -lirc_s -ldl 
+--------------------------------------------------------------------------
+mpiexec was unable to launch the specified application as it could not find an executable:
+
+Executable: ex2f
+Node: c11-5.local
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+2 total processes failed to start
+
+Task and CPU usage stats:
+       JobID    JobName  AllocCPUS   NTasks     MinCPU MinCPUTask     AveCPU    Elapsed ExitCode 
+------------ ---------- ---------- -------- ---------- ---------- ---------- ---------- -------- 
+1362309             DNA          2                                             00:00:04      0:0 
+1362309.bat+      batch          2        1   00:00:00          0   00:00:00   00:00:04      0:0 
+
+Memory usage stats:
+       JobID     MaxRSS MaxRSSTask     AveRSS MaxPages   MaxPagesTask   AvePages 
+------------ ---------- ---------- ---------- -------- -------------- ---------- 
+1362309                                                                          
+1362309.bat+      1068K          0      1068K        0              0          0 
+
+Disk usage stats:
+       JobID  MaxDiskRead MaxDiskReadTask    AveDiskRead MaxDiskWrite MaxDiskWriteTask   AveDiskWrite 
+------------ ------------ --------------- -------------- ------------ ---------------- -------------- 
+1362309                                                                                               
+1362309.bat+            0           65534              0            0            65534              0 
+
+Job 1362309 completed at Thu Dec 20 15:33:46 CET 2018
